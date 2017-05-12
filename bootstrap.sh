@@ -6,6 +6,16 @@ apt_install() {
   sudo apt-get install -y htop vim mtr locate curl zsh
 }
 
+hyperterm_install() {
+  which hyper &> /dev/null
+  if [[ $? -ne 0 ]]; then
+    echo "Hyper install..."
+    wget -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
+    sudo dpkg -i hyper.deb
+    rm hyper.deb
+  fi
+}
+
 git_install() {
   which git &> /dev/null
   if [[ $? -ne 0 ]]; then
@@ -32,6 +42,7 @@ link_dotfiles() {
 
 main() {
   apt_install
+  hyperterm_install
   git_install
   powerline_fonts_install
   link_dotfiles
