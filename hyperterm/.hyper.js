@@ -27,6 +27,7 @@ module.exports = {
 
     // border color (window, tabs)
     borderColor: '#333',
+    windowSize: [950, 600],
 
     // custom css to embed in the main window
     css: '',
