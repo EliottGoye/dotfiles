@@ -2,7 +2,7 @@
 
 DISPLAY_RE="([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)"
 IMAGE_RE="([0-9]+)x([0-9]+)"
-LOCK="./lock.png"
+LOCK="$HOME/dotfiles/lock/lock.png"
 PARAMS=""
 OUTPUT_IMAGE="/tmp/lockscreen.png"
 
