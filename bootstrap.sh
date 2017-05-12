@@ -30,6 +30,7 @@ git_install() {
 powerline_fonts_install() {
   locate "Ubuntu Mono derivative Powerline" &> /dev/null
   if [[ $? -ne 0 ]]; then
+    echo "Install fonts..."
     git clone https://github.com/powerline/fonts.git
     fonts/install.sh
     rm -rf fonts
