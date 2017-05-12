@@ -28,9 +28,12 @@ git_install() {
 }
 
 powerline_fonts_install() {
-  git clone https://github.com/powerline/fonts.git
-  fonts/install.sh
-  rm -rf fonts
+  locate "Ubuntu Mono derivative Powerline" &> /dev/null
+  if [[ $? -ne 0 ]]; then
+    git clone https://github.com/powerline/fonts.git
+    fonts/install.sh
+    rm -rf fonts
+  fi
 }
 
 link_dotfiles() {
