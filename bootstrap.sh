@@ -3,7 +3,7 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install htop vim mtr locate curl zsh
+  sudo apt-get install -y htop vim mtr locate curl zsh
 }
 
 git_install() {
