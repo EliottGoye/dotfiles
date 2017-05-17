@@ -10,6 +10,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'junegunn/vim-emoji'
+set completefunc=emoji#complete
+
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
@@ -17,9 +20,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 call vundle#end()
 filetype plugin indent on
-
-set completefunc=emoji#complete
-
 
 if has("syntax")
   syntax on
