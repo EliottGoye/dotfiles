@@ -1,4 +1,25 @@
-runtime! debian.vim
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'junegunn/vim-emoji'
+
+Plugin 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
+
+
+call vundle#end()
+filetype plugin indent on
+
+set completefunc=emoji#complete
+
 
 if has("syntax")
   syntax on
@@ -6,10 +27,6 @@ endif
 
 set number
 set autoindent
-
-au InsertEnter * set nonumber
-au InsertLeave * set number
-
 
 " Jump to the last position when reopening a file
 if has("autocmd")
@@ -32,6 +49,8 @@ endif
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
+
+set updatetime=250
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")

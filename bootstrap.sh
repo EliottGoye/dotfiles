@@ -44,12 +44,19 @@ link_dotfiles() {
   ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 }
 
+vim_install() {
+  echo "Vundle install..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+}
+
 main() {
   apt_install
   hyperterm_install
   git_install
   powerline_fonts_install
   link_dotfiles
+  vim_install
 }
 
 main
