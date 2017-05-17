@@ -14,6 +14,11 @@ set completefunc=emoji#complete
 
 Plugin 'terryma/vim-multiple-cursors'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
 call vundle#end()
 filetype plugin indent on
 
