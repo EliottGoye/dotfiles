@@ -14,10 +14,6 @@ set completefunc=emoji#complete
 
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'scrooloose/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
-
-
 call vundle#end()
 filetype plugin indent on
 
