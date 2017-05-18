@@ -7,12 +7,20 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+"Syntax
+Plugin 'plasticboy/vim-markdown'
+
+"Interface
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'junegunn/vim-emoji'
 set completefunc=emoji#complete
 
 Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'raimondi/delimitmate'
+
+Plugin 'tpope/vim-commentary'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -29,6 +37,13 @@ endif
 
 set number
 set autoindent
+
+"Invisible chars
+set list
+set listchars=tab:▸-,eol:¬,trail:~,extends:>,precedes:<,space:·
+highlight SpecialKey ctermfg=8
+highlight NonText ctermfg=8 guifg=gray
+
 
 " Jump to the last position when reopening a file
 if has("autocmd")
@@ -52,7 +67,7 @@ endif
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
 
-set updatetime=250
+set updatetime=100
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
