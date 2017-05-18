@@ -16,6 +16,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/vim-emoji'
 set completefunc=emoji#complete
 
+Plugin 'ap/vim-css-color'
+
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'raimondi/delimitmate'
