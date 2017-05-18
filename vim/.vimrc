@@ -39,11 +39,11 @@ set number
 set autoindent
 
 "Invisible chars
-set list
 set listchars=tab:▸-,eol:¬,trail:~,extends:>,precedes:<,space:·
 highlight SpecialKey ctermfg=8
 highlight NonText ctermfg=8 guifg=gray
 
+nmap gl :set list!<CR>
 
 " Jump to the last position when reopening a file
 if has("autocmd")
