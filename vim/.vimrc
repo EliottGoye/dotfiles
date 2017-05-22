@@ -16,6 +16,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/vim-emoji'
 set completefunc=emoji#complete
 
+Plugin 'scrooloose/nerdtree'
+map gt :NERDTreeToggle<CR>
+
 Plugin 'ap/vim-css-color'
 
 Plugin 'terryma/vim-multiple-cursors'
@@ -46,6 +49,7 @@ highlight SpecialKey ctermfg=8
 highlight NonText ctermfg=8 guifg=gray
 
 nmap gl :set list!<CR>
+nmap gn :set number!<CR>
 
 " Jump to the last position when reopening a file
 if has("autocmd")
