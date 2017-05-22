@@ -92,10 +92,10 @@ prompt_context() {
 
 zssh() ssh "$@" -t zsh
 
-alias l='k'
+alias l='k -a'
 alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git pull & fi; done'
 alias ez="vi ~/.zshrc"
-alias ev="vi ~/.vim/vimrc"
+alias ev="vi ~/.vimrc"
 
 h=()
 if [[ -r ~/.ssh/config ]]; then
