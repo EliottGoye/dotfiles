@@ -51,6 +51,8 @@ highlight NonText ctermfg=8 guifg=gray
 nmap gl :set list!<CR>
 nmap gn :set number!<CR>
 
+nmap <CR> o<Esc>
+
 " Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
