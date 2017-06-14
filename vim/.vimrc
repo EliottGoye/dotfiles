@@ -49,7 +49,7 @@ highlight SpecialKey ctermfg=8
 highlight NonText ctermfg=8 guifg=gray
 
 nmap gl :set list!<CR>
-nmap gn :set number!<CR>
+nmap gn :set number! <bar> GitGutterToggle<CR>
 
 nmap <CR> o<Esc>
 
