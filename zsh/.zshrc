@@ -96,7 +96,7 @@ alias l='k -a'
 alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git pull & fi; done'
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
-
+alias fu='sudo $(fc -ln -1)'
 h=()
 if [[ -r ~/.ssh/config ]]; then
   h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
