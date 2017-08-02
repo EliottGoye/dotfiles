@@ -45,6 +45,7 @@ if has("syntax")
 endif
 
 set relativenumber
+set number
 "set autoindent
 
 "Invisible chars
@@ -55,7 +56,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 match ExtraWhitespace /\s\+$/
 
 nmap gl :set list!<CR>
-nmap gn :GitGutterToggle <bar> set relativenumber!<CR>
+nmap gn :GitGutterToggle <bar> set number! <bar> set relativenumber!<CR>
 
 nmap <CR> o<Esc>
 
