@@ -52,7 +52,7 @@ vim_install() {
 
 main() {
   apt_install
-  hyperterm_install
+#  hyperterm_install
   git_install
   powerline_fonts_install
   link_dotfiles
