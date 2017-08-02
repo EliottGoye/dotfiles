@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump colorize cp fast k vagrant)
+plugins=(git autojump colorize cp fast k vagrant ansible)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,8 @@ alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
 alias fu='sudo $(fc -ln -1)'
+alias h='sudo vi /etc/hosts'
+alias v='vim +:NERDTree'
 h=()
 if [[ -r ~/.ssh/config ]]; then
   h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
