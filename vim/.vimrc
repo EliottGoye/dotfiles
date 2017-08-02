@@ -9,6 +9,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Syntax
 Plugin 'plasticboy/vim-markdown'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'glench/vim-jinja2-syntax'
+Plugin 'chase/vim-ansible-yaml'
 
 "Interface
 Plugin 'airblade/vim-gitgutter'
@@ -18,6 +21,7 @@ set completefunc=emoji#complete
 
 Plugin 'scrooloose/nerdtree'
 map gt :NERDTreeToggle<CR>
+Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'ap/vim-css-color'
 
@@ -40,16 +44,18 @@ if has("syntax")
   syntax on
 endif
 
-set number
-set autoindent
+set relativenumber
+"set autoindent
 
 "Invisible chars
 set listchars=tab:▸-,eol:¬,trail:~,extends:>,precedes:<,space:·
 highlight SpecialKey ctermfg=8
 highlight NonText ctermfg=8 guifg=gray
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+match ExtraWhitespace /\s\+$/
 
 nmap gl :set list!<CR>
-nmap gn :set number! <bar> GitGutterToggle<CR>
+nmap gn :GitGutterToggle <bar> set relativenumber!<CR>
 
 nmap <CR> o<Esc>
 
