@@ -42,6 +42,7 @@ link_dotfiles() {
   ln -sf ~/dotfiles/hyperterm/.hyper.js ~/.hyper.js
   ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
   ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+  ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 }
 
 vim_install() {
