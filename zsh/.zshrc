@@ -90,6 +90,9 @@ prompt_context() {
   fi
 }
 
+
+export tmuxId="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
+
 zssh() ssh "$@" -t zsh
 
 alias l='k -a'
