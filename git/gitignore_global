@@ -1,0 +1,26 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependencies folders #
+########################
+vendor/
+node_modules/
+bower_components/
+__pycache__/
+
+# IDE config files #
+####################
+.idea/
+*.history
+out/
+*.iml
+.vscode
+*.swp
+

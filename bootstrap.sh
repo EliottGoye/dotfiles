@@ -3,7 +3,7 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump
+  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux
 }
 
 hyperterm_install() {
@@ -43,6 +43,8 @@ link_dotfiles() {
   ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
   ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
   ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+  ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
+  ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
 }
 
 vim_install() {

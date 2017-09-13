@@ -1,0 +1,14 @@
+[user]
+  email = eliott.goye@smartpanda.fr
+  name = Eliott Goyé
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[help]
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
+[push]
+  default = simple
+[credential]
+  # Cache the http credentials
+  helper = cache
