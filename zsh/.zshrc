@@ -99,6 +99,7 @@ alias l='k -a'
 alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git pull & fi; done'
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
+alias et="vi ~/.tmux.conf"
 alias fu='sudo $(fc -ln -1)'
 alias h='sudo vi /etc/hosts'
 alias v='vim +:NERDTree'
