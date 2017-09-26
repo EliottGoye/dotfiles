@@ -116,3 +116,5 @@ if [[ $#h -gt 0 ]]; then
 fi
 
 fignore=(retry)
+
+if [ -z $TMUX ]; then; tmux; exit; fi
