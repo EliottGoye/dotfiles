@@ -117,4 +117,4 @@ fi
 
 fignore=(retry)
 
-if [ -z $TMUX ]; then; tmux; exit; fi
+#if [ -z $TMUX ]; then; tmux; exit; fi
