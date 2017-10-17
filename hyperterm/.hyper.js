@@ -8,7 +8,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Ubuntu Mono derivative Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Ubuntu Mono derivative Powerline"',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: '#DDD',
@@ -20,10 +20,10 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#DEDEDE',
+    foregroundColor: '#F2F2F2',
 
     // terminal background color
-    backgroundColor: '#2B2B2B',
+    backgroundColor: '#202B3B',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -52,20 +52,20 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#282B2C',
-      red: '#CC0000',
-      green: '#4E9A06',
-      yellow: '#E8BD00',
-      blue: '#3465A4',
-      magenta: '#75507B',
-      cyan: '#06989A',
-      white: '#D3D7CF',
-      lightBlack: '#555753',
-      lightRed: '#EF2929',
-      lightGreen: '#8AE234',
-      lightYellow: '#FCE94F',
-      lightBlue: '#729FCF',
-      lightMagenta: '#AD7FA8',
-      lightCyan: '#34E2E2',
+      red: '#E1321A',
+      green: '#6AB017',
+      yellow: '#FFC005',
+      blue: '#729FCF',
+      magenta: '#EC0048',
+      cyan: '#2AA7E7',
+      white: '#F2F2F2',
+      lightBlack: '#5D5D5D',
+      lightRed: '#FF361E',
+      lightGreen: '#7BC91F',
+      lightYellow: '#FFD00A',
+      lightBlue: '#4788DA',
+      lightMagenta: '#FF1D62',
+      lightCyan: '#4BB8FD',
       lightWhite: '#EEEEEC'
     },
 
@@ -119,8 +119,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
       "hyperborder",
-      "hyper-statusline",
-      "hyperterm-dibdabs",
       "hyperminimal",
       "hyperterm-cursor",
       "hyper-keymap",
