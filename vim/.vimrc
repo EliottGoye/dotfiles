@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,20 +17,11 @@ Plugin 'chase/vim-ansible-yaml'
 "Interface
 Plugin 'airblade/vim-gitgutter'
 
-Plugin 'junegunn/vim-emoji'
-set completefunc=emoji#complete
-
 Plugin 'scrooloose/nerdtree'
 map gt :NERDTreeToggle<CR>
 Plugin 'ryanoasis/vim-devicons'
-
-Plugin 'ap/vim-css-color'
-
 Plugin 'terryma/vim-multiple-cursors'
-
 Plugin 'raimondi/delimitmate'
-
-Plugin 'tpope/vim-commentary'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -70,6 +62,9 @@ endif
 if has("autocmd")
   filetype plugin indent on
 endif
+
+set tabstop=2
+set nofoldenable
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
