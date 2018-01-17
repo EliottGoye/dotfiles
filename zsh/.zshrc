@@ -103,6 +103,7 @@ alias et="vi ~/.tmux.conf"
 alias fu='sudo $(fc -ln -1)'
 alias h='sudo vi /etc/hosts'
 alias v='vim +:NERDTree'
+alias myip='curl ifconfig.co'
 h=()
 if [[ -r ~/.ssh/config ]]; then
   h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
