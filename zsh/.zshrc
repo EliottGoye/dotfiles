@@ -95,7 +95,7 @@ export tmuxId="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> 
 
 zssh() ssh "$@" -t zsh
 
-alias l='k -a'
+alias l='k -ah'
 alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git pull & fi; done'
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
