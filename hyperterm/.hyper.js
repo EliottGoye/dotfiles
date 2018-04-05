@@ -8,7 +8,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Ubuntu Mono derivative Powerline"',
+    fontFamily: '"Fira Code", "Ubuntu Mono derivative Powerline"',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: '#DDD',
