@@ -105,6 +105,19 @@ alias h='sudo vi /etc/hosts'
 alias v='vim +:NERDTree'
 alias t='tmux'
 alias myip='curl ifconfig.co'
+alias gw='./gradlew'
+
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+				hostname="$(echo $* | cut -d'@' -f'2' )"
+        tmux rename-window "${hostname%$'.smartpanda.eu'}"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
+
 h=()
 if [[ -r ~/.ssh/config ]]; then
   h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
