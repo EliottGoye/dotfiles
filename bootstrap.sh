@@ -45,6 +45,8 @@ link_dotfiles() {
   ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
   ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
   ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
+	ln -sf ~/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+	ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 }
 
 vim_install() {
