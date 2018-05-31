@@ -95,17 +95,21 @@ export tmuxId="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> 
 
 zssh() ssh "$@" -t zsh
 
-alias l='k -ah'
-alias gpa='for i in `ls`; do if [ -d "${i}/.git" ]; then git --git-dir ${i}/.git pull & fi; done'
+alias ip='ip --color'
+alias ipb='ip --color --brief'
+
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
 alias et="vi ~/.tmux.conf"
+
+alias l='k -ah'
 alias fu='sudo $(fc -ln -1)'
 alias h='sudo vi /etc/hosts'
 alias v='vim +:NERDTree'
 alias t='tmux'
-alias myip='curl ifconfig.co'
+alias i='curl ifconfig.co'
 alias gw='./gradlew'
+alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 ssh() {
     if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
