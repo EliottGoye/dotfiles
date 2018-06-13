@@ -1,0 +1,5 @@
+Host *
+	User root
+	ServerAliveInterval 5
+	ServerAliveCountMax 3
+
