@@ -26,7 +26,7 @@ module.exports = {
     backgroundColor: '#202B3B',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#7300e6',
     windowSize: [950, 600],
 
     // custom css to embed in the main window
@@ -98,17 +98,6 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
-    keymap: {
-        'CmdOrCtrl+Shift+R': 'reload',
-    },
-    hyperStatusLine: {
-        footerTransparent: false,
-        fontSize: 14
-    },
-    hyperBorder: {
-        borderColors: ['random','random'],
-        borderWidth: '3px'
-    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -118,10 +107,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-      "hyperborder",
-      "hyperminimal",
-      "hyperterm-cursor",
-      "hyper-keymap",
   ],
 
   // in development, you can create a directory under
