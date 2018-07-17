@@ -21,10 +21,19 @@ prompt_context() {
 
 # Change tmux pane name on ssh connect
 ssh() {
-		hostname="$*"
-		if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
+    hostname="$*"
+    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
     command ssh "${hostname}"
-		if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
+    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
+}
+
+ssht() {
+    hostname="$1"
+    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
+    scp -q ~/.tmux.conf ${hostname}:.
+    command ssh -t "${hostname}" tmux
+		command ssh "${hostname}" rm .tmux.conf
+   if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
 }
 
 # SSH auto-completion
@@ -57,6 +66,7 @@ alias h='sudo vi /etc/hosts'
 alias v='vim +:NERDTree'
 alias t='tmux'
 alias s='ssh'
+alias st='ssht'
 alias i='curl ifconfig.co/ip'
 alias c='code .'
 alias gw='./gradlew'
