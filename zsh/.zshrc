@@ -31,7 +31,7 @@ ssht() {
     hostname="$1"
     if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
     scp -q ~/.tmux.conf ${hostname}:.
-    command ssh -t "${hostname}" tmux
+    command ssh -t "${hostname}" "tmux || apt-get install -y tmux && tmux"
 		command ssh "${hostname}" rm .tmux.conf
    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
 }
