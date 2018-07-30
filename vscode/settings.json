@@ -12,5 +12,6 @@
     "git.autofetch": true,
     "editor.renderIndentGuides": false,
     "workbench.iconTheme": "material-icon-theme",
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.2/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.2/server/lombok.jar\"",
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\"",
+    "explorer.confirmDragAndDrop": false,
 }
