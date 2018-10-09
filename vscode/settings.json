@@ -2,7 +2,6 @@
     "editor.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
-    "workbench.colorTheme": "Atom One Dark",
     "files.autoSave": "onFocusChange",
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": true,
@@ -14,4 +13,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\"",
     "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "breadcrumbs.enabled": true,
+    "shellcheck.disableVersionCheck": true,
 }
