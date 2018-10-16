@@ -21,9 +21,10 @@ prompt_context() {
 
 # Change tmux pane name on ssh connect
 ssh() {
-    hostname="$*"
+    hostname="$1"
+		args="$@[2,-1]"
     if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
-    command ssh "${hostname}"
+    command ssh "${hostname}" ${args}
     if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
 }
 
