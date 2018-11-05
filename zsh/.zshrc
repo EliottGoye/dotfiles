@@ -2,15 +2,15 @@
 export ZSH=/home/eliott/.oh-my-zsh
 
 # ZSH theme
-ZSH_THEME="agnoster"
+export ZSH_THEME="agnoster"
 
 # ZSH plugins
-plugins=(git autojump colorize cp fast k vagrant ansible)
+export plugins=(git autojump colorize cp fast k vagrant ansible)
 
 source $ZSH/oh-my-zsh.sh
 
 # Set default Tmux pane name
-if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} 'local'; fi
+if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" 'local'; fi
 
 # Short prompt
 prompt_context() {
@@ -22,19 +22,20 @@ prompt_context() {
 # Change tmux pane name on ssh connect
 ssh() {
     hostname="$1"
-		args="$@[2,-1]"
-    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
-    command ssh "${hostname}" ${args}
-    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
+		args="$*[2,-1]"
+    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
+    command ssh "${hostname}" "${args}"
+    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
 }
 
+# Connect with my tmux conf
 ssht() {
     hostname="$1"
-    if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "${${hostname#root@}%.smartpanda.eu}"; fi
-    scp -q ~/.tmux.conf ${hostname}:.
-    command ssh -t "${hostname}" "tmux || apt-get install -y tmux && tmux"
+    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
+    scp -q ~/.tmux.conf "${hostname}:~/"
+    command ssh -t "${hostname}" "which tmux || apt-get install -y tmux && tmux"
 		command ssh "${hostname}" rm .tmux.conf
-   if (( ${+TMUX} )); then tmux rename-window -t${TMUX_PANE} "local"; fi
+    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
 }
 
 # SSH auto-completion
@@ -46,8 +47,8 @@ if [[ -r ~/.ssh/known_hosts ]]; then
   h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
 fi
 if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:ssh:*' hosts $h
-  zstyle ':completion:*:slogin:*' hosts $h
+  zstyle ':completion:*:ssh:*' hosts ${h}
+  zstyle ':completion:*:slogin:*' hosts ${h}
 fi
 
 # Tmux pane ID variable
