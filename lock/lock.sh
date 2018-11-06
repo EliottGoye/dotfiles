@@ -38,4 +38,4 @@ convert $OUTPUT_IMAGE -scale 10% -scale 1000% $OUTPUT_IMAGE
 convert $OUTPUT_IMAGE $PARAMS $OUTPUT_IMAGE
 
 # Lock the screen:
-i3lock -i $OUTPUT_IMAGE -t -u -d 1
+i3lock -i $OUTPUT_IMAGE -t -e -f -d 1
