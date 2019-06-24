@@ -14,6 +14,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'glench/vim-jinja2-syntax'
 Plugin 'chase/vim-ansible-yaml'
 
+Plugin 'leafgarland/typescript-vim'
+Plugin 'prettier/vim-prettier'
+
 "Interface
 Plugin 'airblade/vim-gitgutter'
 
