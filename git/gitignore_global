@@ -23,4 +23,5 @@ out/
 *.iml
 .vscode
 *.swp
-
+.cassandraWorkbench*
+.cassandraWorkbench/
