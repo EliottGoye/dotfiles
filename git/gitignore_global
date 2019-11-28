@@ -25,3 +25,4 @@ out/
 *.swp
 .cassandraWorkbench*
 .cassandraWorkbench/
+*.min.js

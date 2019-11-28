@@ -44,6 +44,8 @@ link_dotfiles() {
   ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
   ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
   ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
+  ln -sf ~/dotfiles/polybar/config ~/.config/polybar/config
+  ln -sf ~/dotfiles/i3/config ~/.i3/config
   ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
 	ln -sf ~/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 	ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
