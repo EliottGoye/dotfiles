@@ -1,5 +1,6 @@
 Host *
 	User root
-	ServerAliveInterval 5
+	ServerAliveInterval 10
 	ServerAliveCountMax 3
-
+  IdentityFile ~/.ssh/eliott_ed25519
+  IdentityFile ~/.ssh/id_rsa
