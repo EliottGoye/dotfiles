@@ -143,15 +143,15 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/music]
-type = custom/script
-exec-if = ~/etc/dotfiles/bin/music.sh --isPlaying
-exec = ~/etc/dotfiles/bin/music.sh --title
-click-left = i3-msg workspace 8
-interval = 5
-format= <label>
-format-foreground= ${colors.foreground}
-label = 🎵%output% 🎶
+;[module/music]
+;type = custom/script
+;exec-if = ~/etc/dotfiles/bin/music.sh --isPlaying
+;exec = ~/etc/dotfiles/bin/music.sh --title
+;click-left = i3-msg workspace 8
+;interval = 5
+;format= <label>
+;format-foreground= ${colors.foreground}
+;label = 🎵%output% 🎶
 
 [module/xbacklight]
 type = internal/xbacklight
