@@ -58,25 +58,14 @@ bindsym $MOD+d exec i3-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# change focus
-bindsym $MOD+j focus left
-bindsym $MOD+k focus down
-bindsym $MOD+l focus up
-bindsym $MOD+m focus right
 
-# alternatively, you can use the cursor keys:
+# change focus
 bindsym $MOD+Left focus left
 bindsym $MOD+Down focus down
 bindsym $MOD+Up focus up
 bindsym $MOD+Right focus right
 
 # move focused window
-bindsym $MOD+Shift+j move left
-bindsym $MOD+Shift+k move down
-bindsym $MOD+Shift+l move up
-bindsym $MOD+Shift+M move right
-
-# alternatively, you can use the cursor keys:
 bindsym $MOD+Shift+Left move left
 bindsym $MOD+Shift+Down move down
 bindsym $MOD+Shift+Up move up
@@ -151,22 +140,9 @@ bindsym $MOD+Shift+agrave move container to workspace number $ws10
 bindsym $MOD+Shift+parenright move container to workspace number $ws11
 bindsym $MOD+Shift+equal move container to workspace number $ws12
 
-#set $MATTERMOST
-#assign [class="Mattermost"] $MATTERMOST
-#for_window [class="Mattermost"] move to workspace $MATTERMOST
-#for_window [class=".*"] title_format " %title"
-#set $SLACK
-#assign [class="Slack"] $SLACK
-#for_window [class="Slack"] move to workspace $SLACK
-#for_window [class=".*"] title_format " %title"
-#set $DISCORD 9
-#assign [class="Discord"] $DISCORD
-#for_window [class="Discord"] move to workspace $DISCORD
-#for_window [class=".*"] title_format " %title"
-#set $SPOTIFY 9
-#assign [class="Spotify"] $SPOTIFY
-#for_window [class="Spotify"] move to workspace $SPOTIFY
-#for_window [class=".*"] title_format " %title"
+bindsym $MOD+$ALT+Left workspace prev
+
+bindsym $MOD+$ALT+Right workspace next
 
 # reload the configuration file
 bindsym $MOD+Shift+c reload
@@ -194,6 +170,14 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+				bindsym ampersand resize set 200 115
+				bindsym eacute resize set 400 230
+				bindsym quotedbl resize set 600 345
+				bindsym apostrophe resize set 800 460
+				bindsym parenleft resize set 10 ppt 10 ppt
+				bindsym minus resize set 210 140
+				bindsym egrave resize set 240 160
+
         # back to normal: Enter or Escape or $MOD+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -201,6 +185,29 @@ mode "resize" {
 }
 
 bindsym $MOD+r mode "resize"
+
+
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $MOD+l exec --no-startup-id $HOME/dotfiles/lock/lock.sh, mode "default"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -226,9 +233,6 @@ mode "$mode_system" {
 
 bindsym $MOD+Escape mode "$mode_system"
 
-exec_always --no-startup-id $HOME/etc/dotfiles/bin/polybar_run.sh
+exec_always --no-startup-id $HOME/dotfiles/polybar/polybar_run.sh
 
-#feh --randomize --bg-fill $HOME/Images/wallapaper/*
-
-#gaps inner 20
-#gaps outer -2
+exec_always --no-startup-id feh --randomize --bg-fill $HOME/Images/wallapaper/*
