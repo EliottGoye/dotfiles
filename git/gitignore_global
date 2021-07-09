@@ -26,3 +26,4 @@ out/
 .cassandraWorkbench*
 .cassandraWorkbench/
 *.min.js
+.env

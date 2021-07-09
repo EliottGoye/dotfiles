@@ -214,7 +214,7 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s)
 mode "$mode_system" {
     bindsym l exec --no-startup-id $HOME/dotfiles/lock/lock.sh, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $HOME_BIN/lock && sleep 1 && systemctl suspend, mode "default"
+    bindsym s exec --no-startup-id $HOME/dotfiles/lock/lock.sh && sleep 1 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym b exec --no-startup-id "if pgrep redshift; then pkill redshift; else redshift; fi", mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"

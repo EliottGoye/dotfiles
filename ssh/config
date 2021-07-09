@@ -1,5 +1,90 @@
+Host 31.44.219.62
+	User debian
+	LocalForward 19999 gatling:19999
+
+HOST hub_gateway_integration
+  HOSTNAME www.int.docapost.io
+  PORT 8006
+  USER egoye
+  IDENTITYFILE ~/.ssh/id_rsa
+  ServerAliveInterval 60
+
+Host hub_gateway_integration_tunnel
+  # port 2xxxx for intgate
+  HostName www.int.docapost.io
+  port 8006
+  user egoye
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  LocalForward 20001 bc1:8080
+  LocalForward 20002 pro1:8080
+  LocalForward 20003 med1:8080
+  LocalForward 20004 pfs1:8081
+  LocalForward 20005 pfs1:8080
+  LocalForward 29200 em1:9200
+  LocalForward 29300 em1:9300
+  LocalForward 28082 med1:8082
+  LocalForward 28083 med1:8083
+  LocalForward 29083 pro1:8083
+  LocalForward 20101 pro1:10101
+  LocalForward 20201 pro1:10201
+  LocalForward 29042 cass2:9042
+  LocalForward 26379 bc1:6379
+  LocalForward 29201 es1:9200
+  LocalForward 26380 red1:6379
+  LocalForward 20006 cep1:8080
+  LocalForward 20008 bep1:8080
+  LocalForward 20009 cor1:8081
+
+Host hub_gateway_recette
+  Hostname www.rec2.docapost.io
+  Port 8006
+  User egoye
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  # Si proxy
+  #ProxyCommand corkscrew vipproxy1.prod.extelia.fr 8080 %h %p
+
+Host hub_gateway_recette_tunnel
+  HostName www.rec2.docapost.io
+  Port 8006
+  User egoye
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  LocalForward 30001 bc1:8080
+  LocalForward 30002 pro1:8080
+  LocalForward 30003 med1:8080
+  LocalForward 30004 pfs1:8081
+  LocalForward 30005 pfs1:8080
+  LocalForward 39200 em1:9200
+  LocalForward 39300 em1:9300
+  LocalForward 38082 med1:8082
+  LocalForward 38083 med1:8083
+  LocalForward 39083 pro1:8083
+  LocalForward 30101 pro1:10101
+  LocalForward 30201 pro1:10201
+  LocalForward 39042 cass2:9042
+  LocalForward 36379 bc1:6379
+  LocalForward 39201 es1:9200
+  LocalForward 36380 red1:6379
+  LocalForward 30006 cep1:8080
+  LocalForward 30008 bep1:8080
+  LocalForward 30009 cor1:8081
+
+Host dockagility.ci.hub.docapost.io
+	AddressFamily inet
+  HostName dockagility
+  ProxyJump ci.docapost.io
+  LocalForward 50001 127.0.0.1:10001
+  LocalForward 50002 127.0.0.1:10002
+  LocalForward 50003 127.0.0.1:10003
+  LocalForward 50004 127.0.0.1:9042
+  LocalForward 50009 127.0.0.1:8080
+
+Host ci.docapost.io
+  User egoye
+
 Host *
 	User root
-	ServerAliveInterval 5
+	ServerAliveInterval 10
 	ServerAliveCountMax 3
-

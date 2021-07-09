@@ -37,24 +37,29 @@ powerline_fonts_install() {
   fi
 }
 
+tmux_plugin() {
+  mkdir ${HOME}/.tmux
+  git clone git@github.com:jonmosco/kube-tmux.git ${HOME}/.tmux/kube-tmux
+}
+
 link_dotfiles() {
   echo "Linking dotfiles..."
-  ln -sf ~/dotfiles/hyperterm/.hyper.js ~/.hyper.js
-  ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
-  ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-  ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-  ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
-  ln -sf ~/dotfiles/polybar/config ~/.config/polybar/config
-  ln -sf ~/dotfiles/i3/config ~/.i3/config
-  ln -sf ~/dotfiles/git/gitignore_global ~/.gitignore_global
-	ln -sf ~/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-	ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
-	ln -sf ~/dotfiles/ssh/config ~/.ssh/config
+  ln -sf ${HOME}/dotfiles/hyperterm/.hyper.js ${HOME}/.hyper.js
+  ln -sf ${HOME}/dotfiles/vim/.vimrc ${HOME}/.vimrc
+  ln -sf ${HOME}/dotfiles/zsh/.zshrc ${HOME}/.zshrc
+  ln -sf ${HOME}/dotfiles/tmux/.tmux.conf ${HOME}/.tmux.conf
+  ln -sf ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig
+  ln -sf ${HOME}/dotfiles/polybar/config ${HOME}/.config/polybar/config
+  ln -sf ${HOME}/dotfiles/i3/config ${HOME}/.i3/config
+  ln -sf ${HOME}/dotfiles/git/gitignore_global ${HOME}/.gitignore_global
+	ln -sf ${HOME}/dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
+	ln -sf ${HOME}/dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
+	ln -sf ${HOME}/dotfiles/ssh/config ${HOME}/.ssh/config
 }
 
 vim_install() {
   echo "Vundle install..."
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 }
 
@@ -65,6 +70,7 @@ main() {
   powerline_fonts_install
   link_dotfiles
   vim_install
+  tmux_plugin
 }
 
 main

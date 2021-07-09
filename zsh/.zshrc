@@ -1,11 +1,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/eliott/.oh-my-zsh
 
+PATH=/home/eliott/.local/bin:$PATH
+
 # ZSH theme
 export ZSH_THEME="agnoster"
 
+export REGISTRY_NAME='ci.docapost.io'
+
+eval "$(direnv hook zsh)"
+
 # ZSH plugins
-export plugins=(git autojump colorize cp fast k vagrant ansible)
+export plugins=(git autojump colorize cp k vagrant ansible kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -15,18 +21,18 @@ if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" 'local'; fi
 # Short prompt
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+					prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
 
 # Change tmux pane name on ssh connect
-ssh() {
-    hostname="$1"
-		args="$*[2,-1]"
-    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
-    command ssh "${hostname}" "${args}"
-    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
-}
+#ssh() {
+#    hostname="$1"
+#		args="$*[2,-1]"
+#    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
+#    command ssh "${hostname}" "${args}"
+#    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
+#}
 
 # Connect with my tmux conf
 ssht() {
@@ -73,4 +79,9 @@ alias i='curl ifconfig.co/ip'
 alias c='code .'
 alias gw='./gradlew'
 alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
