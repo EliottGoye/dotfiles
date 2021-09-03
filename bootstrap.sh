@@ -3,7 +3,7 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux
+  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux direnv
 }
 
 hyperterm_install() {

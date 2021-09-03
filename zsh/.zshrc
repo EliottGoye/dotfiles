@@ -11,7 +11,7 @@ export REGISTRY_NAME='ci.docapost.io'
 eval "$(direnv hook zsh)"
 
 # ZSH plugins
-export plugins=(git autojump colorize cp k vagrant ansible kubectl)
+export plugins=(git autojump colorize cp vagrant ansible kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,8 +82,8 @@ alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 alias gd='git diff --ignore-space-change'
 alias git unreset="git reset 'HEAD@{1}'"
-alias glola='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
-alias glol='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+#alias glola='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
+#alias glol='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 alias npbr='npm run build && npm run start'
 
