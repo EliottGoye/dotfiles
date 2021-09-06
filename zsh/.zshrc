@@ -11,7 +11,7 @@ export REGISTRY_NAME='ci.docapost.io'
 eval "$(direnv hook zsh)"
 
 # ZSH plugins
-export plugins=(git autojump colorize cp k vagrant ansible kubectl)
+export plugins=(git autojump colorize cp vagrant ansible kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,6 +65,8 @@ export tmuxId="$(($(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}") + 1))" 2>
 alias ip='ip --color'
 alias ipb='ip --color --brief'
 
+alias k='kubectl'
+
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
 alias et="vi ~/.tmux.conf"
@@ -82,14 +84,16 @@ alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 alias gd='git diff --ignore-space-change'
 alias git unreset="git reset 'HEAD@{1}'"
-alias glola='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
-alias glol='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+#alias glola='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
+#alias glol='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 alias npbr='npm run build && npm run start'
 
 alias ap='ansible-playbook'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
