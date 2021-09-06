@@ -3,11 +3,11 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux httpie
+  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux httpie direnv
 }
 
 hyperterm_install() {
-  which hyper &> /dev/null
+  which hyper &>/dev/null
   if [[ $? -ne 0 ]]; then
     echo "Hyper install..."
     wget -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
@@ -17,7 +17,7 @@ hyperterm_install() {
 }
 
 git_install() {
-  which git &> /dev/null
+  which git &>/dev/null
   if [[ $? -ne 0 ]]; then
     echo "Git install..."
     sudo apt-get install git -y
@@ -28,7 +28,7 @@ git_install() {
 }
 
 powerline_fonts_install() {
-  locate "Ubuntu Mono derivative Powerline" &> /dev/null
+  locate "Ubuntu Mono derivative Powerline" &>/dev/null
   if [[ $? -ne 0 ]]; then
     echo "Install fonts..."
     git clone https://github.com/powerline/fonts.git
@@ -52,9 +52,9 @@ link_dotfiles() {
   ln -sf ${HOME}/dotfiles/polybar/config ${HOME}/.config/polybar/config
   ln -sf ${HOME}/dotfiles/i3/config ${HOME}/.i3/config
   ln -sf ${HOME}/dotfiles/git/gitignore_global ${HOME}/.gitignore_global
-	ln -sf ${HOME}/dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
-	ln -sf ${HOME}/dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
-	ln -sf ${HOME}/dotfiles/ssh/config ${HOME}/.ssh/config
+  ln -sf ${HOME}/dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
+  ln -sf ${HOME}/dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
+  ln -sf ${HOME}/dotfiles/ssh/config ${HOME}/.ssh/config
 }
 
 vim_install() {
@@ -65,7 +65,7 @@ vim_install() {
 
 main() {
   apt_install
-#  hyperterm_install
+  #  hyperterm_install
   git_install
   powerline_fonts_install
   link_dotfiles
