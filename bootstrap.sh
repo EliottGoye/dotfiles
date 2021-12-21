@@ -18,7 +18,7 @@ ohmyzsh_install() {
 
 fzf_install() {
   git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
-  ${HOME}/.fzf/install
+  ${HOME}/.fzf/install --key-bindings --completion --no-update-rc
 }
 
 hyperterm_install() {
