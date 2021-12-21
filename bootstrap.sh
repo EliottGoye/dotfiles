@@ -3,7 +3,18 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux httpie direnv
+  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux httpie direnv i3 polybar
+}
+
+snap_install() {
+  echo "Installing snap..."
+  sudo apt-get install snapd
+  sudo snap install espanso -y
+}
+
+fzf_install() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 }
 
 hyperterm_install() {
@@ -55,6 +66,7 @@ link_dotfiles() {
   ln -sf ${HOME}/dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
   ln -sf ${HOME}/dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
   ln -sf ${HOME}/dotfiles/ssh/config ${HOME}/.ssh/config
+  ln -sf ${HOME}/dotfiles/espanso/default.yml ${HOME}/.config/espanso/default.yml
 }
 
 vim_install() {
@@ -64,9 +76,11 @@ vim_install() {
 }
 
 main() {
-  apt_install
-  #  hyperterm_install
   git_install
+  apt_install
+  snap_install
+  fzf_install
+  #  hyperterm_install
   powerline_fonts_install
   link_dotfiles
   vim_install
