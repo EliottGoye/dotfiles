@@ -13,8 +13,8 @@ snap_install() {
 }
 
 fzf_install() {
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+  git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
+  ${HOME}/.fzf/install
 }
 
 hyperterm_install() {
@@ -73,6 +73,11 @@ vim_install() {
   echo "Vundle install..."
   git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
+}
+
+terminal_theme() {
+  git clone https://github.com/Mayccoll/Gogh.git gogh
+  ${HOME}/gogh/themes/elio.sh
 }
 
 main() {
