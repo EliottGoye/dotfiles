@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+zmodload zsh/zprof
 export ZSH=/home/eliott/.oh-my-zsh
 
 PATH=/home/eliott/.local/bin:$PATH
@@ -11,7 +12,7 @@ export REGISTRY_NAME='ci.docapost.io'
 eval "$(direnv hook zsh)"
 
 # ZSH plugins
-export plugins=(git autojump colorize cp vagrant ansible kubectl)
+export plugins=(git autojump cp ansible kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,14 +22,14 @@ if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" 'local'; fi
 # Short prompt
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-					prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
 
 # Change tmux pane name on ssh connect
 s() {
     hostname="$1"
-		args="$*[2,-1]"
+    args="$*[2,-1]"
     if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
     command ssh "$@"
     if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
@@ -40,7 +41,7 @@ ssht() {
     if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
     scp -q ~/.tmux.conf "${hostname}:~/"
     command ssh -t "${hostname}" "which tmux || apt-get install -y tmux && tmux"
-		command ssh "${hostname}" rm .tmux.conf
+    command ssh "${hostname}" rm .tmux.conf
     if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
 }
 
@@ -66,10 +67,13 @@ alias ip='ip --color'
 alias ipb='ip --color --brief'
 
 alias k='kubectl'
+alias kx='kubectx'
+alias kn='kubens'
 
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
 alias et="vi ~/.tmux.conf"
+alias ek="vi ~/.kube/config"
 
 alias l='k -ah'
 alias fu='sudo $(fc -ln -1)'
@@ -78,7 +82,7 @@ alias v='vim +:NERDTree'
 alias t='tmux'
 alias st='ssht'
 alias i='curl ifconfig.co/ip'
-alias c='vscodium .'
+alias c='code .'
 alias gw='./gradlew'
 alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
@@ -94,6 +98,14 @@ alias ap='ansible-playbook'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export JAVA_HOME='/usr/lib/jvm/oracle-java8-jdk-amd64/'
+
+source $HOME/.cargo/env
+
+#export NVM_DIR="$HOME/.nvm"
+#export NVM_LAZY_LOAD=true
+##export NVM_COMPLETION=true
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
