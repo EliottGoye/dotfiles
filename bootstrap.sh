@@ -102,6 +102,12 @@ vscode_install() {
 
   sudo apt update
   sudo apt install code
+
+  echo "Install VScode plugins"
+  while read -r p; do
+    echo "Install $p"
+    code --install-extension --force $p
+  done <vscode/vscode-plugins
 }
 
 main() {
