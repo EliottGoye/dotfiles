@@ -3,13 +3,17 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump tmux httpie direnv i3 polybar
+  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar
 }
 
 snap_install() {
   echo "Installing snap..."
   sudo apt-get install snapd
   sudo snap install espanso -y
+}
+
+ohmyzsh_install() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 fzf_install() {
@@ -48,7 +52,8 @@ powerline_fonts_install() {
   fi
 }
 
-tmux_plugin() {
+tmux_install() {
+  sudo apt-get install tmux -y
   mkdir ${HOME}/.tmux
   git clone git@github.com:jonmosco/kube-tmux.git ${HOME}/.tmux/kube-tmux
 }
@@ -78,18 +83,20 @@ vim_install() {
 terminal_theme() {
   git clone https://github.com/Mayccoll/Gogh.git gogh
   ${HOME}/gogh/themes/elio.sh
+  rm -fr gogh
 }
 
 main() {
   git_install
   apt_install
   snap_install
+  ohmyzsh_install
   fzf_install
+  tmux_install
   #  hyperterm_install
   powerline_fonts_install
   link_dotfiles
   vim_install
-  tmux_plugin
 }
 
 main
