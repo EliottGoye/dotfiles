@@ -106,7 +106,7 @@ vscode_install() {
   echo "Install VScode plugins"
   while read -r p; do
     echo "Install $p"
-    code --install-extension --force $p
+    code --install-extension $p --force
   done <vscode/vscode-plugins
 }
 
