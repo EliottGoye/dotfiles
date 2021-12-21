@@ -108,6 +108,7 @@ vscode_install() {
     echo "Install $p"
     code --install-extension $p --force
   done <vscode/vscode-plugins
+  # Get plugin list with `code --list-extensions`
 }
 
 main() {
