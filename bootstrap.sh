@@ -3,7 +3,7 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar
+  sudo apt-get install -y apt-transport-https htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar
 }
 
 snap_install() {
@@ -94,6 +94,16 @@ kubectl_install() {
   sudo apt-get install -y kubectl
 }
 
+vscode_install() {
+  wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg
+  sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+  sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+  rm -f packages.microsoft.gpg
+
+  sudo apt update
+  sudo apt install code
+}
+
 main() {
   git_install
   apt_install
@@ -101,11 +111,11 @@ main() {
   ohmyzsh_install
   fzf_install
   tmux_install
-  #  hyperterm_install
+  vscode_install
   powerline_fonts_install
-  link_dotfiles
   vim_install
   kubectl_install
+  link_dotfiles
 }
 
 main
