@@ -82,7 +82,7 @@ vim_install() {
 
 terminal_theme() {
   git clone https://github.com/Mayccoll/Gogh.git gogh
-  ${HOME}/gogh/themes/elio.sh
+  ./gogh/themes/elio.sh
   rm -fr gogh
 }
 
