@@ -60,7 +60,7 @@ font-2 = NotoColorEmoji:scale=8;4
 
 modules-left = i3
 modules-center = music
-modules-right = xkeyboard xbacklight pulseaudio wlan eth battery temperature date powermenu github
+modules-right = xkeyboard backlight pulseaudio wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -82,7 +82,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -153,8 +153,10 @@ label-urgent-padding = 2
 ;format-foreground= ${colors.foreground}
 ;label = 🎵%output% 🎶
 
-[module/xbacklight]
-type = internal/xbacklight
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
 format = <label> <ramp>
 label = %percentage%%
 
@@ -270,8 +272,8 @@ label = %temperature-c% 🌡️
 label-warn = %temperature-c% 🌡️
 label-warn-background = ${colors.alert}
 
-;[module/powermenu]
-;type = custom/menu
+[module/powermenu]
+type = custom/menu
 ;format-spacing = 1
 ;format-margin = 2
 ;label-open = 
