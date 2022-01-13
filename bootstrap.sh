@@ -3,13 +3,14 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y apt-transport-https htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar
+  sudo apt-get install -y apt-transport-https htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar xclip
 }
 
 snap_install() {
   echo "Installing snap..."
   sudo apt-get install snapd
   sudo snap install espanso -y
+	espanso start
 }
 
 ohmyzsh_install() {
@@ -89,9 +90,13 @@ terminal_theme() {
 kubectl_install() {
   sudo apt-get update && sudo apt-get install -y apt-transport-https
   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-  echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+  sudo add-apt-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
   sudo apt-get update
   sudo apt-get install -y kubectl
+
+	sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+	sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+	sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 }
 
 vscode_install() {

@@ -233,6 +233,24 @@ mode "$mode_system" {
 
 bindsym $MOD+Escape mode "$mode_system"
 
+exec_always --no-startup-id autorandr office
 exec_always --no-startup-id $HOME/dotfiles/polybar/polybar_run.sh
-
 exec_always --no-startup-id feh --randomize --bg-fill $HOME/Images/wallapaper/*
+
+workspace 1 output HDMI-1
+workspace 2 output DP-3
+
+workspace 3 output HDMI-1
+workspace 4 output HDMI-1
+workspace 5 output HDMI-1
+workspace 6 output HDMI-1
+workspace 7 output DP-3
+workspace 8 output DP-3
+workspace 9 output DP-3
+
+workspace 10 output eDP-1
+workspace 11 output eDP-1
+workspace 12 output eDP-1
+
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 12; exec usr/bin/teams'

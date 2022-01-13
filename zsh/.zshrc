@@ -74,6 +74,7 @@ alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
 alias et="vi ~/.tmux.conf"
 alias ek="vi ~/.kube/config"
+alias es="vi ~/.config/espanso/default.yml"
 
 alias l='k -ah'
 alias fu='sudo $(fc -ln -1)'
@@ -95,17 +96,11 @@ alias npbr='npm run build && npm run start'
 
 alias ap='ansible-playbook'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+export PATH="$HOME/npm-global/bin:$PATH"
+export N_PREFIX=$HOME/.n
 export JAVA_HOME='/usr/lib/jvm/oracle-java8-jdk-amd64/'
 
 source $HOME/.cargo/env
-
-#export NVM_DIR="$HOME/.nvm"
-#export NVM_LAZY_LOAD=true
-##export NVM_COMPLETION=true
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

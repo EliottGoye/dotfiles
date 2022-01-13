@@ -7,7 +7,7 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  - trigger: ":date"
+  - trigger: "§date"
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -15,15 +15,15 @@ matches:
         params:
           format: "%d/%m/%Y"
 
-  - trigger: ":pkey"
+  - trigger: "§pkey"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: "cat ~/.ssh/eliott_ed25519.pub"
+          cmd: "cat ~/.ssh/id_ed25519.pub"
 
-  - trigger: ":ip"
+  - trigger: "§ip"
     replace: "{{output}}"
     vars:
       - name: output
@@ -31,28 +31,28 @@ matches:
         params:
           cmd: "curl ifconfig.co/ip"
 
-  - trigger: ":apt"
+  - trigger: "§apt"
     replace: "apt-get update && apt-get dist-upgrade -y"
 
-  - trigger: ":email"
+  - trigger: "§email"
     replace: "***REMOVED***"
 
-  - trigger: ":tty"
-    replace: ":set ttymouse="
+  - trigger: "§tty"
+    replace: "§set ttymouse="
 
-  - trigger: ":shrug"
+  - trigger: "§shrug"
     replace: '¯\(ツ)/¯'
 
-  - trigger: ":dex"
+  - trigger: "§dex"
     replace: 'docker exec -it $|$ bash'
 
-  - trigger: ":kex"
+  - trigger: "§kex"
     replace: 'kubectl exec -it $|$ -- bash'
 
-  - trigger: ":hacheck"
+  - trigger: "§hacheck"
     replace: 'haproxy -c -V -f /etc/haproxy/haproxy.cfg'
 
-  - trigger: ":md"
+  - trigger: "§md"
     replace: |-
       ```
       {{clipboard}}
