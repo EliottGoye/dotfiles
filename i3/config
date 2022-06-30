@@ -153,35 +153,35 @@ bindsym $MOD+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-				bindsym ampersand resize set 200 115
-				bindsym eacute resize set 400 230
-				bindsym quotedbl resize set 600 345
-				bindsym apostrophe resize set 800 460
-				bindsym parenleft resize set 10 ppt 10 ppt
-				bindsym minus resize set 210 140
-				bindsym egrave resize set 240 160
-
-        # back to normal: Enter or Escape or $MOD+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $MOD+r mode "default"
+    # These bindings trigger as soon as you enter the resize mode
+    
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym m resize grow width 10 px or 10 ppt
+    
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    
+    bindsym ampersand resize set 200 115
+    bindsym eacute resize set 400 230
+    bindsym quotedbl resize set 600 345
+    bindsym apostrophe resize set 800 460
+    bindsym parenleft resize set 10 ppt 10 ppt
+    bindsym minus resize set 210 140
+    bindsym egrave resize set 240 160
+    
+    # back to normal: Enter or Escape or $MOD+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $MOD+r mode "default"
 }
 
 bindsym $MOD+r mode "resize"
@@ -191,17 +191,17 @@ bindsym $MOD+r mode "resize"
 bindsym $mod+m mode "move" focus floating
 mode "move" {
     bindsym $mod+Tab focus right
-
+    
     bindsym Left  move left
     bindsym Down  move down
     bindsym Up    move up
     bindsym Right move right
-
+    
     bindsym h     move left
     bindsym j     move down
     bindsym k     move up
     bindsym l     move right
-
+    
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -225,7 +225,7 @@ mode "$mode_system" {
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym b exec --no-startup-id "if pgrep redshift; then pkill redshift; else redshift; fi", mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
-
+    
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
