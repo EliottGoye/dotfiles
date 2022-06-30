@@ -3,6 +3,7 @@ zmodload zsh/zprof
 export ZSH=/home/eliott/.oh-my-zsh
 
 PATH=/home/eliott/.local/bin:$PATH
+TERM="xterm-256color"
 
 # ZSH theme
 export ZSH_THEME="agnoster"
@@ -21,9 +22,9 @@ if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" 'local'; fi
 
 # Short prompt
 prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-  fi
+    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+    fi
 }
 
 # Change tmux pane name on ssh connect
@@ -48,15 +49,15 @@ ssht() {
 # SSH auto-completion
 h=()
 if [[ -r ~/.ssh/config ]]; then
-  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+    h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
 fi
 if [[ -r ~/.ssh/known_hosts ]]; then
-  h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
+    h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
 fi
 if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:s:*' hosts ${h}
-  zstyle ':completion:*:ssh:*' hosts ${h}
-  zstyle ':completion:*:slogin:*' hosts ${h}
+    zstyle ':completion:*:s:*' hosts ${h}
+    zstyle ':completion:*:ssh:*' hosts ${h}
+    zstyle ':completion:*:slogin:*' hosts ${h}
 fi
 
 # Tmux pane ID variable
@@ -89,18 +90,22 @@ alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 alias gd='git diff --ignore-space-change'
 alias git unreset="git reset 'HEAD@{1}'"
-#alias glola='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
-#alias glol='git log --graph --pretty='\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 alias npbr='npm run build && npm run start'
 
 alias ap='ansible-playbook'
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="$HOME/npm-global/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 export N_PREFIX=$HOME/.n
-export JAVA_HOME='/usr/lib/jvm/oracle-java8-jdk-amd64/'
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+
+source <(kubectl completion zsh)
+compdef __start_kubectl k
 
 source $HOME/.cargo/env
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"

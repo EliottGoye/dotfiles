@@ -1,30 +1,57 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 13,
-    "files.autoSave": "onFocusChange",
-    "editor.renderWhitespace": "boundary",
-    "editor.minimap.enabled": true,
-    "editor.minimap.renderCharacters": false,
-    "editor.minimap.showSlider": "always",
-    "editor.formatOnSave": true,
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "editor.renderIndentGuides": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\"",
-    "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "One Dark Pro",
-    "breadcrumbs.enabled": true,
-    "shellcheck.disableVersionCheck": true,
-    "terminal.integrated.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "terminal.integrated.fontSize": 13.5,
-    "explorer.confirmDelete": false,
-    "terminal.integrated.scrollback": 10000,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "files.autoSave": "onFocusChange",
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.formatOnSave": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\"",
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "breadcrumbs.enabled": true,
+  "shellcheck.disableVersionCheck": true,
+  "terminal.integrated.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "terminal.integrated.fontSize": 13.5,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.scrollback": 10000,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "[jsonnet]": {
+    "editor.defaultFormatter": "xrc-inc.jsonnet-formatter"
+  },
+  "[helm]": {},
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+  },
+  "gitlens.plusFeatures.enabled": false,
+  "editor.guides.indentation": false,
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "diffEditor.ignoreTrimWhitespace": false
 }
