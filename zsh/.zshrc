@@ -3,12 +3,13 @@ zmodload zsh/zprof
 export ZSH=/home/eliott/.oh-my-zsh
 
 PATH=/home/eliott/.local/bin:$PATH
-TERM="xterm-256color"
+#TERM="xterm-256color"
 
 # ZSH theme
 export ZSH_THEME="agnoster"
 
 export REGISTRY_NAME='ci.docapost.io'
+export EDITOR='vim'
 
 eval "$(direnv hook zsh)"
 
@@ -104,8 +105,9 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 source <(kubectl completion zsh)
 compdef __start_kubectl k
 
-source $HOME/.cargo/env
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$HOME/dotfiles/zsh/tsh.zsh" ] && source "$HOME/dotfiles/zsh/tsh.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
