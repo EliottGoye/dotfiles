@@ -53,5 +53,11 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  }
 }
