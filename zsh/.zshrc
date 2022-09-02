@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh installation.
-zmodload zsh/zprof
 export ZSH=/home/eliott/.oh-my-zsh
 
 PATH=/home/eliott/.local/bin:$PATH
