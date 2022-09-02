@@ -6,6 +6,9 @@ LOCK="$HOME/dotfiles/lock/lock.png"
 PARAMS=""
 OUTPUT_IMAGE="/tmp/lockscreen.png"
 
+# Delete old screenshot
+rm $OUTPUT_IMAGE || true
+
 # Take screenshot:
 scrot -z $OUTPUT_IMAGE
 
