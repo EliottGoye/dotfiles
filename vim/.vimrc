@@ -67,9 +67,6 @@ nmap gn :GitGutterToggle <bar> set number! <bar> set relativenumber!<CR>
 
 nmap <CR> o<Esc>
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
 " Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
