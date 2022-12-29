@@ -20,5 +20,3 @@
 	defaultBranch = main
 [status]
 	submoduleSummary = true
-[branch]
-	autoSetupMerge = always
