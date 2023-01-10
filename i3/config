@@ -254,3 +254,4 @@ workspace 12 output eDP-1
 
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 12; exec usr/bin/teams'
+exec xautolock -time 5 -locker "$HOME/dotfiles/lock/lock.sh"
