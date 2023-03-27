@@ -42,10 +42,13 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
   },
   "vs-kubernetes": {
-    "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vs-kubernetes.minikube-show-information-expiration": "2023-05-14T11:21:28.349Z",
+    "vs-kubernetes.crd-code-completion": "enabled"
   },
   "gitlens.plusFeatures.enabled": false,
   "editor.guides.indentation": false,
@@ -59,5 +62,33 @@
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  }
+  },
+  "diffEditor.maxComputationTime": 0,
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "é": true,
+    "ô": true,
+    "à": true,
+    "è": true,
+    "ç": true,
+    "ê": true,
+    "ù": true,
+    "â": true
+  },
+  "[ansible]": {
+    "gitlens.codeLens.scopes": ["document"],
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "comments": true,
+      "other": true,
+      "strings": true
+    }
+  },
+  "diffEditor.renderSideBySide": false,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "update.showReleaseNotes": false
 }

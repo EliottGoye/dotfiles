@@ -90,6 +90,8 @@ alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 alias gd='git diff --ignore-space-change'
 alias git unreset="git reset 'HEAD@{1}'"
+alias git-ssh='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^https://([^/]*)/(.*)$,git@\1:\2,'\'')"'
+alias git-https='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^git@([^:]*):/*(.*)$,https://\1/\2,'\'')"'
 
 alias npbr='npm run build && npm run start'
 
