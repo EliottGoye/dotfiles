@@ -60,6 +60,7 @@ if [[ $#h -gt 0 ]]; then
     zstyle ':completion:*:slogin:*' hosts ${h}
 fi
 
+
 # Tmux pane ID variable
 export tmuxId="$(($(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}") + 1))" 2> /dev/null
 
@@ -70,6 +71,9 @@ alias ipb='ip --color --brief'
 alias k='kubectl'
 alias kx='kubectx'
 alias kn='kubens'
+
+alias tx='tsh login $(tsh clusters | fzf-tmux --header-lines=2 | cut -d" " -f1)'
+alias ts='tsh ssh root@$(tsh ls -f names | fzf)'
 
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
@@ -102,6 +106,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export N_PREFIX=$HOME/.n
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+source "$HOME/.cargo/env"
 
 source <(kubectl completion zsh)
 compdef __start_kubectl k
@@ -110,5 +115,6 @@ compdef __start_kubectl k
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/dotfiles/zsh/tsh.zsh" ] && source "$HOME/dotfiles/zsh/tsh.zsh"
 
-
 eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
+
+_fzf_complete_tsh() { _fzf_complete -- "tsh ssh root@$2" < <( tsh ls -f names ) }
