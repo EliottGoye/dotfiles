@@ -117,4 +117,4 @@ compdef __start_kubectl k
 
 eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
 
-_fzf_complete_tsh() { _fzf_complete -- "tsh ssh root@$2" < <( tsh ls -f names ) }
+_fzf_complete_tsh() { _fzf_complete --height=60% --info=inline --border --margin=1 --padding=1 -- "tsh ssh root@$2" < <( tsh ls -f names ) }
