@@ -12,8 +12,9 @@ default = current
 [credential]
 # Cache the http credentials
 helper = cache
-helper = /usr/local/bin/git-credential-manager
-credentialStore = secretservice
+	credentialStore = secretservice
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
 [alias]
 mwps = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
 gloga = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -25,7 +26,7 @@ submoduleSummary = true
 [credential "https://dev.azure.com"]
 useHttpPath = true
 [credential "https://gitlab.smartpanda-network.fr"]
-gitLabDevClientId = 2ec5c3bd0d8c8fb572d2987401a0cf790b7e4e7a2283305e0e35dc29947bae1d
-gitLabDevClientSecret = be043fb155acb568f02e00f3eccc50c0cf38a072ffbd0d26a55eb1bf20fcc148
-gitLabAuthModes = browser
-provider = gitlab
+	gitLabDevClientId = 2ec5c3bd0d8c8fb572d2987401a0cf790b7e4e7a2283305e0e35dc29947bae1d
+	gitLabDevClientSecret = be043fb155acb568f02e00f3eccc50c0cf38a072ffbd0d26a55eb1bf20fcc148
+	gitLabAuthModes = browser
+	provider = gitlab

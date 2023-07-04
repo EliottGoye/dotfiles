@@ -47,7 +47,7 @@
   },
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vs-kubernetes.minikube-show-information-expiration": "2023-05-14T11:21:28.349Z",
+    "vs-kubernetes.minikube-show-information-expiration": "2023-12-13T12:22:16.630Z",
     "vs-kubernetes.crd-code-completion": "enabled"
   },
   "gitlens.plusFeatures.enabled": false,
@@ -90,5 +90,16 @@
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
-  "update.showReleaseNotes": false
+  "update.showReleaseNotes": false,
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  }
 }

@@ -27,15 +27,6 @@ prompt_context() {
     fi
 }
 
-# Change tmux pane name on ssh connect
-s() {
-    hostname="$1"
-    args="$*[2,-1]"
-    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "${${hostname#root@}%.smartpanda.eu}"; fi
-    command ssh "$@"
-    if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
-}
-
 # Connect with my tmux conf
 ssht() {
     hostname="$1"
@@ -45,21 +36,6 @@ ssht() {
     command ssh "${hostname}" rm .tmux.conf
     if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" "local"; fi
 }
-
-# SSH auto-completion
-h=()
-if [[ -r ~/.ssh/config ]]; then
-    h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
-fi
-if [[ -r ~/.ssh/known_hosts ]]; then
-    h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
-fi
-if [[ $#h -gt 0 ]]; then
-    zstyle ':completion:*:s:*' hosts ${h}
-    zstyle ':completion:*:ssh:*' hosts ${h}
-    zstyle ':completion:*:slogin:*' hosts ${h}
-fi
-
 
 # Tmux pane ID variable
 export tmuxId="$(($(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}") + 1))" 2> /dev/null
@@ -72,8 +48,8 @@ alias k='kubectl'
 alias kx='kubectx'
 alias kn='kubens'
 
-alias tx='tsh login $(tsh clusters | fzf-tmux --header-lines=2 | cut -d" " -f1)'
-alias ts='tsh ssh root@$(tsh ls -f names | fzf)'
+alias tx='${HOME}/dotfiles/bin/tsh_switch_cluster.sh'
+alias ts='${HOME}/dotfiles/bin/tsh_connect_node.sh'
 
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
@@ -93,9 +69,10 @@ alias gw='./gradlew'
 alias u='sudo apt-get update && sudo apt-get dist-upgrade -y'
 
 alias gd='git diff --ignore-space-change'
-alias git unreset="git reset 'HEAD@{1}'"
+alias git-unreset="git reset 'HEAD@{1}'"
 alias git-ssh='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^https://([^/]*)/(.*)$,git@\1:\2,'\'')"'
 alias git-https='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^git@([^:]*):/*(.*)$,https://\1/\2,'\'')"'
+alias gc-='git checkout -'
 
 alias npbr='npm run build && npm run start'
 
@@ -106,15 +83,15 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export N_PREFIX=$HOME/.n
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
-source "$HOME/.cargo/env"
 
+source "$HOME/.cargo/env"
 source <(kubectl completion zsh)
 compdef __start_kubectl k
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/dotfiles/zsh/tsh.zsh" ] && source "$HOME/dotfiles/zsh/tsh.zsh"
 
-eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
+source "$HOME/dotfiles/zsh/fzf.zsh"
 
-_fzf_complete_tsh() { _fzf_complete --height=60% --info=inline --border --margin=1 --padding=1 -- "tsh ssh root@$2" < <( tsh ls -f names ) }
+#eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
+agility-fortune
