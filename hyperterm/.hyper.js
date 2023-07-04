@@ -5,10 +5,10 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
-
+    fontSize: 13.6,
     // font family with optional fallbacks
     fontFamily: '"Fira Code", "Ubuntu Mono derivative Powerline"',
+    fontFamily: '"Ubuntu Mono derivative Powerline"',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: '#DDD',
@@ -107,6 +107,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+		"hyperminimal"
   ],
 
   // in development, you can create a directory under
