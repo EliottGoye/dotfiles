@@ -27,7 +27,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[shellscript]": {
-    "editor.defaultFormatter": "shakram02.bash-beautify"
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[jsonnet]": {
     "editor.defaultFormatter": "xrc-inc.jsonnet-formatter"
@@ -101,5 +101,8 @@
       "strings": "off",
       "other": "off"
     }
+  },
+  "files.associations": {
+    "*.jsonnet": "jsonnet"
   }
 }

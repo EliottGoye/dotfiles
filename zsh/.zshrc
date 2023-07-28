@@ -81,6 +81,7 @@ alias ap='ansible-playbook'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=/home/eliott/.n/bin/:$PATH
 export N_PREFIX=$HOME/.n
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
