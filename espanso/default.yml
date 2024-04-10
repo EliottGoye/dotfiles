@@ -1,6 +1,6 @@
-backend: Clipboard
-
 matches:
+  - trigger: ":paste"
+    form: "[[Content]]"
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
@@ -8,6 +8,22 @@ matches:
         type: date
         params:
           format: "%d/%m/%Y"
+
+  - regex: ":1024x(?P<num>.*);"
+    replace: "{{result}}"
+    vars:
+      - name: result
+        type: shell
+        params:
+          cmd: "res=$(($ESPANSO_NUM * 1024)); echo $res"
+
+  - regex: ":mul\\((?P<num1>.*?),(?P<num2>.*?)\\)"
+    replace: "{{result}}"
+    vars:
+      - name: result
+        type: shell
+        params:
+          cmd: "res=$(($ESPANSO_NUM1 * $ESPANSO_NUM2)); echo $res"
 
   - trigger: ":pkey"
     replace: "{{output}}"
@@ -17,16 +33,32 @@ matches:
         params:
           cmd: "cat ~/.ssh/id_ed25519.pub"
 
+  - trigger: ":bwgen"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "bw generate"
+
+  - trigger: ":pwgen"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "pwgen -n 30 -N 1"
+
   - trigger: ":ip"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: "curl ifconfig.co/ip"
+          cmd: "curl ifconfig.me"
 
   - trigger: ":apt"
-    replace: "apt-get update && apt-get dist-upgrade"
+    replace: "apt update && apt dist-upgrade"
 
   - trigger: ":email"
     replace: "***REMOVED***"
@@ -39,6 +71,10 @@ matches:
 
   - trigger: ":shrug"
     replace: '¯\(ツ)/¯'
+  - trigger: ":tableflip"
+    replace: '(╯°□°）╯︵ ┻━┻'
+  - trigger: ":tabledrop"
+    replace: '┬─┬ノ( º _ ºノ)'
 
   - trigger: ":dex"
     replace: 'docker exec -it $|$ bash'
@@ -57,4 +93,12 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  - trigger: ":zellij"
+    replace: "bash <(curl -L zellij.dev/launch)"
+
+  - trigger: ":ntfy"
+    replace: 'HOOK="https://ntfy.sh/ping_task_egoye" ; echo $HOOK; echo "$HOOK" | curl -F-=\<- qrenco.de; $|$ && MSG="Done" || MSG="Error" ; curl -d "$MSG" "$HOOK"'
+
+
 
