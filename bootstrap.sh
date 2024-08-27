@@ -3,14 +3,14 @@
 apt_install() {
   echo "Installing soft..."
   sudo apt-get update
-  sudo apt-get install -y apt-transport-https htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar xclip
+  sudo apt-get install -y apt-transport-https htop vim mtr locate curl zsh scrot i3lock autojump httpie direnv i3 polybar xclip sway sway-bar sway-lock
 }
 
 snap_install() {
   echo "Installing snap..."
   sudo apt-get install snapd
   sudo snap install espanso -y
-	espanso start
+  espanso start
 }
 
 ohmyzsh_install() {
@@ -18,8 +18,8 @@ ohmyzsh_install() {
 }
 
 fzf_install() {
-  git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
-  ${HOME}/.fzf/install --key-bindings --completion --no-update-rc
+  git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}/.fzf"
+  "${HOME}/.fzf/install" --key-bindings --completion --no-update-rc
 }
 
 hyperterm_install() {
@@ -55,29 +55,30 @@ powerline_fonts_install() {
 
 tmux_install() {
   sudo apt-get install tmux -y
-  mkdir ${HOME}/.tmux
-  git clone git@github.com:jonmosco/kube-tmux.git ${HOME}/.tmux/kube-tmux
+  mkdir "${HOME}/.tmux"
+  git clone git@github.com:jonmosco/kube-tmux.git "${HOME}/.tmux/kube-tmux"
 }
 
 link_dotfiles() {
   echo "Linking dotfiles..."
-  ln -sf ${HOME}/dotfiles/hyperterm/.hyper.js ${HOME}/.hyper.js
-  ln -sf ${HOME}/dotfiles/vim/.vimrc ${HOME}/.vimrc
-  ln -sf ${HOME}/dotfiles/zsh/.zshrc ${HOME}/.zshrc
-  ln -sf ${HOME}/dotfiles/tmux/.tmux.conf ${HOME}/.tmux.conf
-  ln -sf ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig
-  ln -sf ${HOME}/dotfiles/polybar/config ${HOME}/.config/polybar/config
-  ln -sf ${HOME}/dotfiles/i3/config ${HOME}/.i3/config
-  ln -sf ${HOME}/dotfiles/git/gitignore_global ${HOME}/.gitignore_global
-  ln -sf ${HOME}/dotfiles/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
-  ln -sf ${HOME}/dotfiles/vscode/settings.json ${HOME}/.config/Code/User/settings.json
-  ln -sf ${HOME}/dotfiles/ssh/config ${HOME}/.ssh/config
-  ln -sf ${HOME}/dotfiles/espanso/default.yml ${HOME}/.config/espanso/default.yml
+  ln -sf "${HOME}/dotfiles/hyperterm/.hyper.js" "${HOME}/.hyper.js"
+  ln -sf "${HOME}/dotfiles/vim/.vimrc" "${HOME}/.vimrc"
+  ln -sf "${HOME}/dotfiles/zsh/.zshrc" "${HOME}/.zshrc"
+  ln -sf "${HOME}/dotfiles/tmux/.tmux.conf" "${HOME}/.tmux.conf"
+  ln -sf "${HOME}/dotfiles/git/gitconfig" "${HOME}/.gitconfig"
+  ln -sf "${HOME}/dotfiles/polybar/config" "${HOME}/.config/polybar/config"
+  ln -sf "${HOME}/dotfiles/sway/config" "${HOME}/.config/sway/config"
+  ln -sf "${HOME}/dotfiles/i3/config" "${HOME}/.config/i3/config"
+  ln -sf "${HOME}/dotfiles/git/gitignore_global" "${HOME}/.gitignore_global"
+  ln -sf "${HOME}/dotfiles/vscode/keybindings.json" "${HOME}/.config/Code/User/keybindings.json"
+  ln -sf "${HOME}/dotfiles/vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
+  ln -sf "${HOME}/dotfiles/ssh/config" "${HOME}/.ssh/config"
+  ln -sf "${HOME}/dotfiles/espanso/default.yml" "${HOME}/.config/espanso/default.yml"
 }
 
 vim_install() {
   echo "Vundle install..."
-  git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
   vim +PluginInstall +qall
 }
 
@@ -94,9 +95,9 @@ kubectl_install() {
   sudo apt-get update
   sudo apt-get install -y kubectl
 
-	sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
-	sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
-	sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+  sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+  sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+  sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 }
 
 vscode_install() {
@@ -109,9 +110,9 @@ vscode_install() {
   sudo apt install code
 
   echo "Install VScode plugins"
-  while read -r p; do
-    echo "Install $p"
-    code --install-extension $p --force
+  while read -r plugin; do
+    echo "Install $plugin"
+    code --install-extension "$plugin" --force
   done <vscode/vscode-plugins
   # Get plugin list with `code --list-extensions`
 }

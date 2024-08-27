@@ -7,7 +7,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
   "files.autoSave": "onFocusChange",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "all",
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
@@ -17,7 +17,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\" -Xbootclasspath/a:\"/home/eliott/.vscode/extensions/GabrielBB.vscode-lombok-0.9.4/server/lombok.jar\"",
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "One Dark Pro",
   "breadcrumbs.enabled": true,
   "shellcheck.disableVersionCheck": true,
   "terminal.integrated.fontFamily": "'Fira Code', 'Ubuntu Mono derivative Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -30,7 +29,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[jsonnet]": {
-    "editor.defaultFormatter": "xrc-inc.jsonnet-formatter"
+    "editor.defaultFormatter": "Grafana.vscode-jsonnet"
   },
   "[helm]": {},
   "workbench.colorTheme": "One Dark Pro Darker",
@@ -47,7 +46,7 @@
   },
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vs-kubernetes.minikube-show-information-expiration": "2023-12-13T12:22:16.630Z",
+    "vs-kubernetes.minikube-show-information-expiration": "2024-09-03T11:07:03.482Z",
     "vs-kubernetes.crd-code-completion": "enabled"
   },
   "gitlens.plusFeatures.enabled": false,
@@ -73,7 +72,9 @@
     "ç": true,
     "ê": true,
     "ù": true,
-    "â": true
+    "â": true,
+    "ế": true,
+    "œ": true
   },
   "[ansible]": {
     "gitlens.codeLens.scopes": ["document"],
@@ -103,6 +104,31 @@
     }
   },
   "files.associations": {
-    "*.jsonnet": "jsonnet"
-  }
+    "*.jsonnet": "jsonnet",
+    "hosts": "ini",
+    "**/vars/**/*.yml": "jinja-yaml",
+    "**/vars/**/*.yml.dist": "jinja-yaml",
+    "**/tasks/**/*.yml": "ansible",
+    "**/handlers/*.yml": "ansible",
+    "**/roles/**/*.yml": "ansible",
+    "**/playbooks/**/*.yml": "ansible",
+    "**/templates/**/*.j2": "jinja",
+    "**/templates/**/*.xml.j2": "jinja-xml",
+    "**/templates/**/*.conf.j2": "jinja-properties",
+    "**/templates/**/*.properties.j2": "jinja-properties",
+    "**/templates/**/*.js.j2": "jinja-js",
+    "**/templates/**/*.json.j2": "jinja-json",
+    "**/templates/**/*.sql.j2": "jinja-sql",
+    "**/templates/**/*.service.j2": "jinja-systemd",
+    "**/ansible/**/hosts": "ini",
+    "**/inventories/*.ini": "ini",
+    "ansible.cfg": "ini",
+    "keycloak-*.yml": "ansible",
+    "playbook-*.yml": "ansible",
+    "*.sh.j2": "jinja-shell"
+  },
+  "ansible.python.interpreterPath": "/bin/python3.9",
+  "hediet.vscode-drawio.resizeImages": null,
+  "[jinja]": {},
+  "hediet.vscode-drawio.theme": "Kennedy"
 }

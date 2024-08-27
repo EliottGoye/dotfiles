@@ -30,3 +30,7 @@ useHttpPath = true
 	gitLabDevClientSecret = ***REMOVED***
 	gitLabAuthModes = browser
 	provider = gitlab
+[diff "sopsdiffer"]
+  textconv = "sops -d"
+[gitbutler]
+	signCommits = true

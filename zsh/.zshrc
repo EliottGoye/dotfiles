@@ -60,7 +60,7 @@ alias es="vi ~/.config/espanso/default.yml"
 alias l='k -ah'
 alias fu='sudo $(fc -ln -1)'
 alias h='sudo vi /etc/hosts'
-alias v='vim +:NERDTree'
+alias v='nvim .'
 alias t='tmux'
 alias st='ssht'
 alias i='curl ifconfig.co/ip'
@@ -81,11 +81,11 @@ alias ap='ansible-playbook'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export PATH=/home/eliott/.n/bin/:$PATH
 export N_PREFIX=$HOME/.n
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
-source "$HOME/.cargo/env"
 source <(kubectl completion zsh)
 compdef __start_kubectl k
 
@@ -96,3 +96,8 @@ source "$HOME/dotfiles/zsh/fzf.zsh"
 
 #eval "$(_DA_CLI_COMPLETE=zsh_source da-cli)"
 agility-fortune
+
+#Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
