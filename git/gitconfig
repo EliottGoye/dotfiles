@@ -1,6 +1,3 @@
-[user]
-email = ***REMOVED***
-name = Eliott Goyé
 [core]
 editor = vim
 excludesfile = ~/.gitignore_global
@@ -25,12 +22,9 @@ defaultBranch = main
 submoduleSummary = true
 [credential "https://dev.azure.com"]
 useHttpPath = true
-[credential "https://gitlab.smartpanda-network.fr"]
-	gitLabDevClientId = ***REMOVED***
-	gitLabDevClientSecret = ***REMOVED***
-	gitLabAuthModes = browser
-	provider = gitlab
 [diff "sopsdiffer"]
   textconv = "sops -d"
 [gitbutler]
 	signCommits = true
+[include]
+  path = ~/.gitconfig_local

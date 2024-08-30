@@ -235,6 +235,7 @@ bindsym $MOD+Escape mode "$mode_system"
 
 exec_always --no-startup-id autorandr office
 exec_always --no-startup-id feh --randomize --bg-fill $HOME/Images/wallapaper/*
+exec --no-startup-id '$HOME/Applications/client_de_synchronisation_nextcloud.appimage'
 
 workspace 1 output DP-1-9
 workspace 2 output DP-1-8
