@@ -60,9 +60,6 @@ matches:
   - trigger: ":apt"
     replace: "apt update && apt dist-upgrade"
 
-  - trigger: ":email"
-    replace: "***REMOVED***"
-
   - trigger: ":tty"
     replace: ":set ttymouse="
 
