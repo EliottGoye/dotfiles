@@ -6,11 +6,12 @@ PATH=/home/eliott/.local/bin:$PATH
 
 # ZSH theme
 export ZSH_THEME="agnoster"
-
-export REGISTRY_NAME='ci.docapost.io'
 export EDITOR='vim'
 
 eval "$(direnv hook zsh)"
+
+# Enable vim keybindings
+bindkey -v
 
 # ZSH plugins
 export plugins=(git autojump cp ansible kubectl)
@@ -18,7 +19,11 @@ export plugins=(git autojump cp ansible kubectl)
 source $ZSH/oh-my-zsh.sh
 
 # Set default Tmux pane name
-if [[ -v TMUX ]]; then tmux rename-window -t "${TMUX_PANE}" 'local'; fi
+if [[ -v TMUX ]]; then
+  tmux rename-window -t "${TMUX_PANE}" 'local'
+else
+  tmux attach || tmux
+fi
 
 # Short prompt
 prompt_context() {
@@ -85,6 +90,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=/home/eliott/.n/bin/:$PATH
 export N_PREFIX=$HOME/.n
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+
+export GEM_HOME=~/.ruby/
+export PATH="$PATH:~/.ruby/bin"
 
 source <(kubectl completion zsh)
 compdef __start_kubectl k
