@@ -25,6 +25,7 @@
   "terminal.integrated.scrollback": 10000,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "cSpell.language": "en,fr",
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -41,20 +42,20 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.autopep8",
     "editor.formatOnType": true
   },
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vs-kubernetes.minikube-show-information-expiration": "2024-09-03T11:07:03.482Z",
-    "vs-kubernetes.crd-code-completion": "enabled"
+    "vs-kubernetes.crd-code-completion": "enabled",
+    "vscode-kubernetes.minikube-path-linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vs-kubernetes.minikube-show-information-expiration": "2025-08-19T09:08:34.988Z"
   },
   "gitlens.plusFeatures.enabled": false,
   "editor.guides.indentation": false,
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "terminal.integrated.enableMultiLinePasteWarning": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
@@ -96,6 +97,7 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultFormatter": "darkriszty.markdown-table-prettify",
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
       "comments": "off",
@@ -123,6 +125,8 @@
     "**/ansible/**/hosts": "ini",
     "**/inventories/*.ini": "ini",
     "ansible.cfg": "ini",
+    "*.yml.j2": "jinja-yaml",
+    "*.yaml.j2": "jinja-yaml",
     "keycloak-*.yml": "ansible",
     "playbook-*.yml": "ansible",
     "*.sh.j2": "jinja-shell"
@@ -130,5 +134,14 @@
   "ansible.python.interpreterPath": "/bin/python3.9",
   "hediet.vscode-drawio.resizeImages": null,
   "[jinja]": {},
-  "hediet.vscode-drawio.theme": "Kennedy"
+  "hediet.vscode-drawio.theme": "Kennedy",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  }
 }
