@@ -9,9 +9,9 @@ default = current
 [credential]
 # Cache the http credentials
 helper = cache
-	credentialStore = secretservice
-	helper = 
-	helper = /usr/local/bin/git-credential-manager
+credentialStore = secretservice
+helper =
+helper = /usr/local/bin/git-credential-manager
 [alias]
 mwps = push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds
 gloga = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -23,8 +23,10 @@ submoduleSummary = true
 [credential "https://dev.azure.com"]
 useHttpPath = true
 [diff "sopsdiffer"]
-  textconv = "sops -d"
+textconv = "sops -d"
 [gitbutler]
-	signCommits = true
+signCommits = true
 [include]
-  path = ~/.gitconfig_local
+path = ~/.gitconfig_local
+[pull]
+rebase = true
