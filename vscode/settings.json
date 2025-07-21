@@ -35,7 +35,7 @@
   "[helm]": {},
   "workbench.colorTheme": "One Dark Pro Darker",
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -143,5 +143,8 @@
   },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform"
-  }
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "docker.extension.enableComposeLanguageServer": false,
+  "python.defaultInterpreterPath": "/bin/python3"
 }

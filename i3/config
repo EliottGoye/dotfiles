@@ -225,7 +225,20 @@ bindsym $MOD+Menu mode "$mode_system"
 
 exec_always --no-startup-id autorandr office
 exec_always --no-startup-id feh --randomize --bg-fill $HOME/Images/wallapaper/*
-exec_always --no-startup-id $HOME/Applications/client_de_synchronisation_nextcloud.appimage
+#exec_always --no-startup-id $HOME/Applications/client_de_synchronisation_nextcloud.appimage
+
+workspace 1 output DP-1-9
+workspace 2 output DP-1-9
+workspace 3 output DP-1-9
+workspace 4 output DP-1-9
+workspace 5 output DP-1-9
+
+workspace 6  output DP-1-8
+workspace 7  output DP-1-8
+workspace 8  output DP-1-8
+workspace 9  output DP-1-8
+workspace 10 output DP-1-8
+workspace 11 output DP-1-8
 
 workspace 1 output DP-3-9
 workspace 2 output DP-3-9
@@ -239,6 +252,8 @@ workspace 8  output DP-3-8
 workspace 9  output DP-3-8
 workspace 10 output DP-3-8
 workspace 11 output DP-3-8
+
+
 
 workspace 12 output eDP-1
 workspace 13 output eDP-1

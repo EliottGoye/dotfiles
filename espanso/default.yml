@@ -72,6 +72,8 @@ matches:
     replace: '(╯°□°）╯︵ ┻━┻'
   - trigger: ":tabledrop"
     replace: '┬─┬ノ( º _ ºノ)'
+  - trigger: ":check:"
+    replace: '✅'
 
   - trigger: ":dex"
     replace: 'docker exec -it $|$ bash'
