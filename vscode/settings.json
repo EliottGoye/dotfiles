@@ -146,5 +146,6 @@
   },
   "workbench.editor.empty.hint": "hidden",
   "docker.extension.enableComposeLanguageServer": false,
-  "python.defaultInterpreterPath": "/bin/python3"
+  "python.defaultInterpreterPath": "/bin/python3",
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
