@@ -8,7 +8,13 @@ matches:
         type: date
         params:
           format: "%d/%m/%Y"
-
+  - trigger: ":_date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y_%m_%d"
   - regex: ":1024x(?P<num>.*);"
     replace: "{{result}}"
     vars:

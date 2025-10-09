@@ -48,8 +48,7 @@
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
     "vs-kubernetes.crd-code-completion": "enabled",
-    "vscode-kubernetes.minikube-path-linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vs-kubernetes.minikube-show-information-expiration": "2025-08-19T09:08:34.988Z"
+    "vscode-kubernetes.minikube-path-linux": "/home/eliott/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
   },
   "gitlens.plusFeatures.enabled": false,
   "editor.guides.indentation": false,
@@ -75,7 +74,8 @@
     "ù": true,
     "â": true,
     "ế": true,
-    "œ": true
+    "œ": true,
+    "É": true
   },
   "[ansible]": {
     "gitlens.codeLens.scopes": ["document"],
@@ -147,5 +147,20 @@
   "workbench.editor.empty.hint": "hidden",
   "docker.extension.enableComposeLanguageServer": false,
   "python.defaultInterpreterPath": "/bin/python3",
-  "workbench.secondarySideBar.defaultVisibility": "hidden"
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "python.createEnvironment.trigger": "off",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
 }

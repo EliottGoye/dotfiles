@@ -55,6 +55,7 @@ alias kn='kubens'
 
 alias tx='${HOME}/dotfiles/bin/tsh_switch_cluster.sh'
 alias ts='${HOME}/dotfiles/bin/tsh_connect_node.sh'
+alias s='${HOME}/dotfiles/bin/sshm.sh'
 
 alias ez="vi ~/.zshrc"
 alias ev="vi ~/.vimrc"
