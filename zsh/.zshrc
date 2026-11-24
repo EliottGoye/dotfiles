@@ -86,17 +86,17 @@ alias ap='ansible-playbook'
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=/home/eliott/.n/bin/:$PATH
 export N_PREFIX=$HOME/.n
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 
-export GEM_HOME=~/.ruby/
-export PATH="$PATH:~/.ruby/bin"
+export GEM_HOME=$HOME/.ruby/
+export PATH="$PATH:$HOME/.ruby/bin"
 
 source <(kubectl completion zsh)
+source <(kubie generate-completion)
 compdef __start_kubectl k
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
