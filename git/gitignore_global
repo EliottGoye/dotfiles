@@ -27,3 +27,4 @@ out/
 .cassandraWorkbench/
 *.min.js
 .env
+.ansible/.lock
